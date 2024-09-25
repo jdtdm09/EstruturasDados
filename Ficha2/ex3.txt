@@ -1,0 +1,1 @@
+O Nós Sentinela, vai facilitar na hora de remover um Node na primeira posição pois não precisamos de verificar se o Node anterior é Null.
