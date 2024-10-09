@@ -4,11 +4,6 @@ public class LinkedStack<T> implements StackADT<T> {
     private LinearNode<T> top;
     private int size;
    
-    public LinkedStack(T element) {
-        top = new LinearNode<>(element);
-        size = 1;
-    }
-
     public LinkedStack() {
         top = null;
         size = 0;
@@ -27,6 +22,7 @@ public class LinkedStack<T> implements StackADT<T> {
         if (isEmpty()) {
             throw new EmptyCollectionException("Stack is empty");
         }
+
         T element = top.getElement();
         top = top.getNext();
         size--;
@@ -38,6 +34,7 @@ public class LinkedStack<T> implements StackADT<T> {
         if (isEmpty()) {
             throw new EmptyCollectionException("Stack is empty");
         }
+        
         return top.getElement();
     }
 

@@ -13,19 +13,13 @@ public class ArrayStack<T> implements StackADT<T> {
         top = 0;
         stack = (T[]) (new Object[DEFAULT_CAPACITY]);
     }
-    public ArrayStack (int initialCapacity)
-    {
-        top = 0;
-        stack = (T []) (new Object[initialCapacity]);
-    }
 
     public void push (T element)
     {
         if  (size() == stack.length)
         expandCapacity();
 
-        stack[top] = element;
-        top++;
+        stack[top++] = element;
     }
 
     private void expandCapacity() {
@@ -41,18 +35,19 @@ public class ArrayStack<T> implements StackADT<T> {
     public T pop() throws EmptyCollectionException {
         if (isEmpty())
             throw new EmptyCollectionException("Stack");
+
             top--;
             T result  = stack[top];
             stack[top] = null;
 
             return result;
-
     }
 
     @Override
     public T peek() throws EmptyCollectionException {
         if (isEmpty())
             throw new EmptyCollectionException("Stack");
+            
         return stack[top - 1];
     }
 
