@@ -1,0 +1,7 @@
+Tendo em conta o ex1 e o ex2, sendo um a implementação de uma LinkedQueue e a outra de um CircularArrayQueue, 
+para que pudesse implementar a CircularArrayQueue foi necessário alterar:
+
+ - foi necessária a criação de uma array com uma capacidade máxima;
+ - para evitar que o array fique cheio temos de adicionar um método para expandir a capacidade;
+ - Como se trata de um array circular é necessário calcular sempre o resto de "rear + 1" : Tamanho da queue, para 
+ que caso esteja no limite o mesmo volte para a posição se possivel;
