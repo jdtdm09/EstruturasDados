@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de Dados Resumo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .advantages, .disadvantages {
+            margin-left: 20px;
+        }
+
+        .advantages::before {
+            content: "✔ ";
+            color: green;
+        }
+
+        .disadvantages::before {
+            content: "✖ ";
+            color: red;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #142430;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resumo de Estruturas de Dados</h1>
+
+        <!-- Resumo da Notação Big-O -->
+        <div class="section">
+            <h2>Resumo da Notação Big-O</h2>
+            <p><strong>O(1):</strong> Tempo de execução constante, independentemente do tamanho dos dados. Exemplo: Acesso ao topo de uma pilha (ArrayStack ou LinkedStack).</p>
+            <p><strong>O(n):</strong> Tempo de execução cresce linearmente com o número de elementos. Exemplo: Percorrer uma lista ligada (LinkedList) para encontrar um elemento no meio ou no fim.</p>
+            <p>A notação Big-O é usada para descrever a eficiência de algoritmos. **O(1)** indica que o tempo de execução não muda com o tamanho da entrada, enquanto **O(n)** indica que o tempo de execução aumenta proporcionalmente ao número de elementos.</p>
+        </div>
+
+        <!-- LinkedList -->
+        <div class="section">
+            <h2>LinkedList</h2>
+            <p><strong>Inserir/Tirar:</strong> Inserção no início O(1), inserção/remover no meio ou fim O(n).</p>
+            <p><strong>Primeiro:</strong> Acesso rápido (referência direta).</p>
+            <p><strong>Último/Meio:</strong> Acesso lento, precisa percorrer a lista.</p>
+            <p class="advantages">Estrutura simples, ideal para listas dinâmicas com muitas inserções/remoções.</p>
+            <p class="disadvantages">Acesso lento em elementos do meio e fim.</p>
+        </div>
+
+        <!-- LinkedList com Nós Sentinela -->
+        <div class="section">
+            <h2>LinkedList com Nós Sentinela</h2>
+            <p><strong>Inserir/Tirar:</strong> Semelhante à LinkedList, mas sem casos especiais para lista vazia ou remoções na cabeça/cauda.</p>
+            <p><strong>Primeiro/Último:</strong> Fácil acesso devido aos nós sentinela (não nulos).</p>
+            <p class="advantages">Lógica simplificada, evita verificações extras.</p>
+            <p class="disadvantages">Maior uso de memória devido aos nós sentinela.</p>
+        </div>
+
+        <!-- DoublyLinkedList -->
+        <div class="section">
+            <h2>DoublyLinkedList</h2>
+            <p><strong>Inserir/Tirar:</strong> Inserções e remoções eficientes em qualquer posição O(1).</p>
+            <p><strong>Primeiro/Último/Meio:</strong> Acesso eficiente aos dois extremos, mas o meio ainda requer percurso O(n).</p>
+            <p class="advantages">Percurso bidirecional e remoção eficiente.</p>
+            <p class="disadvantages">Mais complexa e maior uso de memória (dois ponteiros por nó).</p>
+        </div>
+
+        <!-- ArrayStack -->
+        <div class="section">
+            <h2>ArrayStack</h2>
+            <p><strong>Inserir/Tirar:</strong> Inserção e remoção no topo O(1), até o redimensionamento.</p>
+            <p><strong>Topo:</strong> Acesso direto ao elemento do topo O(1).</p>
+            <p class="advantages">Acesso rápido e eficiente para pilhas de tamanho fixo.</p>
+            <p class="disadvantages">Precisa de redimensionamento, o que pode ser custoso.</p>
+        </div>
+
+        <!-- LinkedStack -->
+        <div class="section">
+            <h2>LinkedStack</h2>
+            <p><strong>Inserir/Tirar:</strong> Inserção e remoção no topo O(1), sem necessidade de redimensionamento.</p>
+            <p><strong>Topo:</strong> Acesso ao topo O(1).</p>
+            <p class="advantages">Sem limite de tamanho, pilha dinâmica.</p>
+            <p class="disadvantages">Uso de memória extra para armazenar ponteiros.</p>
+        </div>
+
+        <!-- LinkedQueue -->
+        <div class="section">
+            <h2>LinkedQueue</h2>
+            <p><strong>Inserir:</strong> Inserção no final O(1).</p>
+            <p><strong>Remover:</strong> Remoção no início O(1).</p>
+            <p><strong>Primeiro/Último:</strong> Acesso direto aos extremos.</p>
+            <p class="advantages">Tamanho dinâmico, eficiente para filas com inserções e remoções frequentes.</p>
+            <p class="disadvantages">Uso de memória extra para os ponteiros.</p>
+        </div>
+
+        <!-- CircularArrayQueue -->
+        <div class="section">
+            <h2>CircularArrayQueue</h2>
+            <p><strong>Inserir/Tirar:</strong> Inserção e remoção O(1), mas precisa de controle de circularidade.</p>
+            <p><strong>Primeiro/Último:</strong> Acesso O(1), mas pode exigir redimensionamento.</p>
+            <p class="advantages">Uso eficiente de memória, evitando espaços desperdiçados.</p>
+            <p class="disadvantages">Complexidade adicional para gerenciar o índice circular.</p>
+        </div>
+
+        <!-- Tabela Comparativa -->
+        <div class="section">
+            <h2>Comparação de Características</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Estrutura</th>
+                        <th>Inserir</th>
+                        <th>Remover</th>
+                        <th>Acesso ao Primeiro/Último</th>
+                        <th>Complexidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LinkedList</td>
+                        <td>O(1) no início, O(n) no fim</td>
+                        <td>O(1) no início, O(n) no meio/fim</td>
+                        <td>O(1)/O(n)</td>
+                        <td>Simples</td>
+                    </tr>
+                    <tr>
+                        <td>LinkedList com Nós Sentinela</td>
+                        <td>O(1) no início</td>
+                        <td>O(1) no início, O(n) no meio/fim</td>
+                        <td>O(1)/O(n)</td>
+                        <td>Simplificada (sem casos especiais)</td>
+                    </tr>
+                    <tr>
+                        <td>DoublyLinkedList</td>
+                        <td>O(1) em qualquer posição</td>
+                        <td>O(1) em qualquer posição</td>
+                        <td>O(1)/O(1)</td>
+                        <td>Mais complexa</td>
+                    </tr>
+                    <tr>
+                        <td>ArrayStack</td>
+                        <td>O(1) até redimensionamento</td>
+                        <td>O(1)</td>
+                        <td>O(1) (topo)</td>
+                        <td>Simples (redimensionamento necessário)</td>
+                    </tr>
+                    <tr>
+                        <td>LinkedStack</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>Simples e dinâmico</td>
+                    </tr>
+                    <tr>
+                        <td>LinkedQueue</td>
+                        <td>O(1) (fim)</td>
+                        <td>O(1) (início)</td>
+                        <td>O(1)</td>
+                        <td>Simples e dinâmico</td>
+                    </tr>
+                    <tr>
+                        <td>CircularArrayQueue</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>Complexidade para gestão circular</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
