@@ -6,7 +6,7 @@ import java.util.Iterator;
 import Interface.BinaryTreeADT;
 import Interface.QueueADT;
 
-public class ArrayBinaryTree<T extends Comparable<T>> implements BinaryTreeADT<T> {
+public class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
 
     protected int size;
     protected T[] tree;
